@@ -12,3 +12,17 @@ C:\Users\huynh\Desktop\AngularDemo\obj\Debug\netcoreapp2.1\AngularDemo.AssemblyI
 C:\Users\huynh\Desktop\AngularDemo\obj\Debug\netcoreapp2.1\AngularDemo.RazorTargetAssemblyInfo.cache
 C:\Users\huynh\Desktop\AngularDemo\obj\Debug\netcoreapp2.1\AngularDemo.dll
 C:\Users\huynh\Desktop\AngularDemo\obj\Debug\netcoreapp2.1\AngularDemo.pdb
+D:\angulardemo\bin\Debug\netcoreapp2.1\AngularDemo.deps.json
+D:\angulardemo\bin\Debug\netcoreapp2.1\AngularDemo.runtimeconfig.json
+D:\angulardemo\bin\Debug\netcoreapp2.1\AngularDemo.runtimeconfig.dev.json
+D:\angulardemo\bin\Debug\netcoreapp2.1\AngularDemo.dll
+D:\angulardemo\bin\Debug\netcoreapp2.1\AngularDemo.pdb
+D:\angulardemo\obj\Debug\netcoreapp2.1\AngularDemo.csprojAssemblyReference.cache
+D:\angulardemo\obj\Debug\netcoreapp2.1\AngularDemo.csproj.CoreCompileInputs.cache
+D:\angulardemo\obj\Debug\netcoreapp2.1\AngularDemo.RazorAssemblyInfo.cache
+D:\angulardemo\obj\Debug\netcoreapp2.1\AngularDemo.RazorAssemblyInfo.cs
+D:\angulardemo\obj\Debug\netcoreapp2.1\AngularDemo.AssemblyInfoInputs.cache
+D:\angulardemo\obj\Debug\netcoreapp2.1\AngularDemo.AssemblyInfo.cs
+D:\angulardemo\obj\Debug\netcoreapp2.1\AngularDemo.RazorTargetAssemblyInfo.cache
+D:\angulardemo\obj\Debug\netcoreapp2.1\AngularDemo.dll
+D:\angulardemo\obj\Debug\netcoreapp2.1\AngularDemo.pdb

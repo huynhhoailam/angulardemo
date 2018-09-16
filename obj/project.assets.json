@@ -11507,11 +11507,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\huynh\\Desktop\\AngularDemo\\AngularDemo.csproj",
+      "projectUniqueName": "D:\\angulardemo\\AngularDemo.csproj",
       "projectName": "AngularDemo",
-      "projectPath": "c:\\Users\\huynh\\Desktop\\AngularDemo\\AngularDemo.csproj",
+      "projectPath": "D:\\angulardemo\\AngularDemo.csproj",
       "packagesPath": "C:\\Users\\huynh\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\huynh\\Desktop\\AngularDemo\\obj\\",
+      "outputPath": "D:\\angulardemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

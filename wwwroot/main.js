@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".example-spacer {\r\n    flex: 1 1 auto;\r\n  }\r\n  "
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\r\n    <span>ANGULAR APPLICATION</span>\r\n  </mat-toolbar>\r\n<div class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n    <a class=\"navbar-brand \" routerLink=\"\" aria-label=\"Bootstrap\"> ANGULAR</a>\r\n    <div class=\"\">\r\n        <ul class=\"navbar-nav bd-navbar-nav flex-row\">\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link active\" routerLink=\"/category\">CATEGORIES</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLink=\"/product\">PRODUCTS</a>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n</div>\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<mat-toolbar color=\"primary\">\r\n    <mat-toolbar-row>\r\n        <span>ANGULAR</span>\r\n        <span class=\"example-spacer\"></span>\r\n        <span>CATEGORIES</span>\r\n        <span class=\"example-spacer\"></span>\r\n        <span>PRODUCTS</span>\r\n    </mat-toolbar-row>\r\n</mat-toolbar>\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -584,7 +584,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\huynh\Desktop\AngularDemo\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\angulardemo\src\main.ts */"./src/main.ts");
 
 
 /***/ })
