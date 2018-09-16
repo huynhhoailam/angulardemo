@@ -9,7 +9,7 @@ import { Routing } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryService } from './services/category.service';
 import { CategoryFormComponent } from './category-form/category-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     AppMaterialModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [CategoryService],
   bootstrap: [AppComponent]

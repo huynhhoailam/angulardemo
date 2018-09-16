@@ -213,7 +213,8 @@ var AppModule = /** @class */ (function () {
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"],
                 _app_material_module__WEBPACK_IMPORTED_MODULE_0__["AppMaterialModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"]
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"]
             ],
             providers: [_services_category_service__WEBPACK_IMPORTED_MODULE_8__["CategoryService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
@@ -259,7 +260,7 @@ var Routing = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "form.emp-form{\r\n    background-color: #dbdbdb;\r\n    border-radius: 4px;\r\n    padding: 10px;\r\n    width: 700px;\r\n    margin-left: 25%;\r\n}\r\n\r\ndiv.validation-error{\r\n    color: red;\r\n    text-align: center;\r\n}\r\n\r\nbutton:hover, a.btn:hover{\r\n    cursor: pointer;\r\n}"
+module.exports = ""
 
 /***/ }),
 
@@ -284,7 +285,10 @@ module.exports = ""
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoryFormComponent", function() { return CategoryFormComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_category_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../services/category.service */ "./src/app/services/category.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -294,19 +298,31 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
 
 var CategoryFormComponent = /** @class */ (function () {
-    function CategoryFormComponent() {
+    function CategoryFormComponent(data, dialogRef, fb, _categoryService) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.fb = fb;
+        this._categoryService = _categoryService;
     }
-    CategoryFormComponent.prototype.ngOnInit = function () {
-    };
+    CategoryFormComponent.prototype.ngOnInit = function () { };
     CategoryFormComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'app-category-form',
             template: __webpack_require__(/*! ./category-form.component.html */ "./src/app/category-form/category-form.component.html"),
             styles: [__webpack_require__(/*! ./category-form.component.css */ "./src/app/category-form/category-form.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_3__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [Object, _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
+            _services_category_service__WEBPACK_IMPORTED_MODULE_0__["CategoryService"]])
     ], CategoryFormComponent);
     return CategoryFormComponent;
 }());
@@ -347,10 +363,11 @@ module.exports = "<div class=\"spinner\" *ngIf=\"loadingState; else category\">\
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoryListComponent", function() { return CategoryListComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_category_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/category.service */ "./src/app/services/category.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _category_form_category_form_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../category-form/category-form.component */ "./src/app/category-form/category-form.component.ts");
+/* harmony import */ var _shared_DBOperation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../shared/DBOperation */ "./src/app/shared/DBOperation.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_category_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/category.service */ "./src/app/services/category.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _category_form_category_form_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../category-form/category-form.component */ "./src/app/category-form/category-form.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -365,6 +382,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var CategoryListComponent = /** @class */ (function () {
     function CategoryListComponent(_categoryService, dialog, snackBar) {
         this._categoryService = _categoryService;
@@ -372,7 +390,7 @@ var CategoryListComponent = /** @class */ (function () {
         this.snackBar = snackBar;
         this.valueSearch = '';
         this.displayedColumns = ['ID', 'Name', 'Description', 'Action'];
-        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"]();
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"]();
         this.categoryUrl = 'api/category/';
     }
     CategoryListComponent.prototype.ngOnInit = function () {
@@ -388,25 +406,35 @@ var CategoryListComponent = /** @class */ (function () {
         });
     };
     CategoryListComponent.prototype.addCategory = function () {
+        this.dbop = _shared_DBOperation__WEBPACK_IMPORTED_MODULE_0__["DBOperation"].create;
+        this.modalTitle = 'Add New Category';
+        this.modalBtnTitle = 'Add';
         this.openDialog();
     };
     CategoryListComponent.prototype.openDialog = function () {
         var _this = this;
-        var DialogRef = this.dialog.open(_category_form_category_form_component__WEBPACK_IMPORTED_MODULE_3__["CategoryFormComponent"], {
+        var dialogRef = this.dialog.open(_category_form_category_form_component__WEBPACK_IMPORTED_MODULE_4__["CategoryFormComponent"], {
             width: '500px',
             data: {
-                category: this.category
+                category: this.category,
+                dbop: this.dbop,
+                modalTitle: this.modalTitle,
+                modalBtnTitle: this.modalBtnTitle
             }
         });
-        DialogRef.afterClosed().subscribe(function (result) {
+        dialogRef.afterClosed().subscribe(function (result) {
             console.log('The dialog was closed.');
             if (result === 'success') {
                 _this.loadingState = true;
                 _this.LoadData();
-                _this.showMessage('Added successfully.');
+                switch (_this.dbop) {
+                    case _shared_DBOperation__WEBPACK_IMPORTED_MODULE_0__["DBOperation"].create:
+                        _this.showMessage('Added successfully.');
+                        break;
+                }
             }
             else if (result === 'error') {
-                _this.showMessage('there are some problems when saving. Please contact admin.');
+                _this.showMessage('There are some problems when saving. Please contact admin.');
             }
             else {
                 _this.showMessage('Please try again. Something went wrong.');
@@ -419,12 +447,12 @@ var CategoryListComponent = /** @class */ (function () {
         });
     };
     CategoryListComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-category-list',
             template: __webpack_require__(/*! ./category-list.component.html */ "./src/app/category-list/category-list.component.html"),
             styles: [__webpack_require__(/*! ./category-list.component.css */ "./src/app/category-list/category-list.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_category_service__WEBPACK_IMPORTED_MODULE_1__["CategoryService"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"]])
+        __metadata("design:paramtypes", [_services_category_service__WEBPACK_IMPORTED_MODULE_2__["CategoryService"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialog"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"]])
     ], CategoryListComponent);
     return CategoryListComponent;
 }());
@@ -567,6 +595,26 @@ var CategoryService = /** @class */ (function () {
     return CategoryService;
 }());
 
+
+
+/***/ }),
+
+/***/ "./src/app/shared/DBOperation.ts":
+/*!***************************************!*\
+  !*** ./src/app/shared/DBOperation.ts ***!
+  \***************************************/
+/*! exports provided: DBOperation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DBOperation", function() { return DBOperation; });
+var DBOperation;
+(function (DBOperation) {
+    DBOperation[DBOperation["create"] = 1] = "create";
+    DBOperation[DBOperation["update"] = 2] = "update";
+    DBOperation[DBOperation["delete"] = 3] = "delete";
+})(DBOperation || (DBOperation = {}));
 
 
 /***/ }),

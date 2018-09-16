@@ -1,10 +1,9 @@
+import { DBOperation } from './../shared/DBOperation';
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../services/category.service';
 import { ICategory } from '../models/category';
 import { MatTableDataSource, MatSnackBar } from '@angular/material';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { Observable, Subject } from 'rxjs';
+import { MatDialog } from '@angular/material';
 import { CategoryFormComponent } from '../category-form/category-form.component';
 
 @Component({
@@ -22,8 +21,11 @@ export class CategoryListComponent implements OnInit {
     categories: ICategory[];
     category: ICategory;
     private categoryUrl = 'api/category/';
+    dbop: DBOperation;
+    modalTitle: string;
+    modalBtnTitle: string;
 
-    constructor(private _categoryService: CategoryService, private dialog: MatDialog, public snackBar: MatSnackBar) {}
+    constructor(private _categoryService: CategoryService, private dialog: MatDialog, public snackBar: MatSnackBar) { }
 
     ngOnInit() {
         this.loadingState = true;
@@ -32,32 +34,43 @@ export class CategoryListComponent implements OnInit {
 
     LoadData(): void {
         this._categoryService.GetAllCategories(this.categoryUrl + 'GetAllCategory')
-        .subscribe(categories => {
-            this.loadingState = false;
-            this.dataSource.data = categories;
-        });
+            .subscribe(categories => {
+                this.loadingState = false;
+                this.dataSource.data = categories;
+            });
     }
 
     addCategory(): void {
+        this.dbop = DBOperation.create;
+        this.modalTitle = 'Add New Category';
+        this.modalBtnTitle = 'Add';
         this.openDialog();
     }
 
     openDialog(): void {
-        const DialogRef = this.dialog.open(CategoryFormComponent, {
+        const dialogRef = this.dialog.open(CategoryFormComponent, {
             width: '500px',
             data: {
-                category: this.category
+                category: this.category,
+                dbop: this.dbop,
+                modalTitle: this.modalTitle,
+                modalBtnTitle: this.modalBtnTitle
             }
         });
 
-        DialogRef.afterClosed().subscribe(result => {
+        dialogRef.afterClosed().subscribe(result => {
             console.log('The dialog was closed.');
             if (result === 'success') {
                 this.loadingState = true;
                 this.LoadData();
-                this.showMessage('Added successfully.');
+                switch (this.dbop) {
+                    case DBOperation.create:
+                        this.showMessage('Added successfully.');
+                        break;
+                }
+
             } else if (result === 'error') {
-                this.showMessage('there are some problems when saving. Please contact admin.');
+                this.showMessage('There are some problems when saving. Please contact admin.');
             } else {
                 this.showMessage('Please try again. Something went wrong.');
             }
