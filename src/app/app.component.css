@@ -1,4 +1,9 @@
-.example-spacer {
-    flex: 1 1 auto;
-  }
+.space {
+    width: 200px;
+}
+
+.home {
+    width: 150px;
+    color: darkred  ;
+}
   

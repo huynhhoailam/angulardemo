@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { ICategory } from '../models/category';
 import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -31,6 +31,14 @@ export class CategoryService {
     DeleteCategory(url: string, id: number): Observable<any> {
         const newurl = `${url}?id=${id}`;
         return this.http.delete(newurl, httpOptions).pipe(catchError(this.handleError));
+    }
+
+    SearchCategory(url: string, search: string): Observable<ICategory[]> {
+        if (!search.trim()) {
+            return of([]);
+        }
+
+        return this.http.get<ICategory[]>(`${url}/?categoryName=${search}`).pipe(catchError(this.handleError));
     }
 
     private handleError(error: HttpErrorResponse) {
